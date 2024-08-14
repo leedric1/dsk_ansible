@@ -2,10 +2,10 @@
 #ansible_user=default_user
  
 [poolboy_group]
-192.168.1.14 ansible_user=poolboy
+192.168.1.14 ansible_user=poolboy apache_package=apache2 php_package=libapache2-mod-php
  
 [hulk_group]
-192.168.1.15 ansible_user=hulk
+192.168.1.15 ansible_user=hulk apache_package=apache2 php_package=libapache2-mod-php
  
 [panther_group]
-192.168.1.16 ansible_user=panther
+192.168.1.16 ansible_user=panther apache_package=apache2 php_package=libapache2-mod-php
