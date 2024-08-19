@@ -16,6 +16,27 @@
       upgrade: dist
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
+
+  - name: create user
+    tags: always
+    ansible.builtin.user:
+      name: optimus
+      groups: root
+
+  - name: add sudoers file for simone
+    tags: always
+    ansible.builtin.copy:
+      src: sudoer_optimus
+      dest: /etc/sudoers.d/optimus
+      owner: root
+      group: root
+      mode: 0440
+
+  - name: add ssh key for optimus user
+    tags: always
+    ansible.builtin.authorized_key:
+      user: optimus
+      key: "fkljdskfuhfui"
   
 - hosts: poolboy_group
   become: true
